@@ -4,3 +4,15 @@ import {test, describe, expect} from "@jest/globals"; // this is optional, all t
 test ('5! is 120', () => {
     expect(factorial(5)).toBe(120)
 });
+
+test ('0! is 1', () => {
+    expect(factorial(0)).toBe(1)
+});
+
+test ('Factorial of negative int is throwing exception', () => {
+    expect(()=> {
+        factorial(-5);
+    }).toThrow();
+});
+
+export
