@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avatar creation tool</title>
+</head>
+<body>
+
+<h1> Avatar creation</h1>
+
+<form action="/create-avatar" method="post" style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; row-gap: 12px">
+    <label for="avatarName">Avatar's Name:</label>
+    <input type="text" id="avatarName" name="avatarName">
+
+    <label for="childAge">Child's Age:</label>
+    <input type="number" id="childAge" name="childAge">
+
+    <label for="skinColor">Skin Color:</label>
+    <input type="color" id="skinColor" name="skinColor">
+
+    <label for="hairstyle">Hairstyle:</label>
+    <select id="hairstyle" name="hairstyle">
+        <option value="short">Short</option>
+        <option value="medium">Medium</option>
+        <option value="long">Long</option>
+        <option value="curly">Curly</option>
+        <option value="straight">Straight</option>
+    </select>
+
+    <label for="headShape">Head Shape:</label>
+    <select id="headShape" name="headShape">
+        <option value="round">Round</option>
+        <option value="oval">Oval</option>
+        <option value="square">Square</option>
+        <option value="heart">Heart</option>
+        <option value="triangle">Triangle</option>
+    </select>
+
+    <label for="upperPart">Upper Clothing:</label>
+    <select id="upperPart" name="upperPart">
+        <option value="t-shirt">T-shirt</option>
+        <option value="shirt">Shirt</option>
+        <option value="hoodie">Hoodie</option>
+        <option value="jacket">Jacket</option>
+        <option value="sweater">Sweater</option>
+    </select>
+
+    <label for="lowerPart">Lower Clothing:</label>
+    <select id="lowerPart" name="lowerPart">
+        <option value="pants">Pants</option>
+        <option value="shorts">Shorts</option>
+        <option value="skirt">Skirt</option>
+        <option value="dress">Dress</option>
+        <option value="leggings">Leggings</option>
+    </select>
+    <button type="submit">Create</button>
+</form>
+</body>
+</html>
