@@ -10,11 +10,8 @@ const __dirname = '.';
 const app = express()
 
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'src', 'public')))
 app.use(express.json())
-app.get('/', function (req, res) {
-    res.sendFile(`index.html`)
-})
 
 app.post('/api/avatars', (req, res)=>{
     console.log(" POST /api/avatars")
