@@ -14,9 +14,16 @@ describe('avatar api', () => {
         "lowerClothing": "shorts"
     }
 
+    const TEST_USER_DATA = {
+        "userName": "testuser",
+        "password": "123",
+        "roles": ["parent", "child"]
+    }
+
     test('create avatar', async () => {
         const createResponse = await request(app)
             .post('/api/avatars')
+            .auth('marie@home.edu', '123')
             .send(TEST_DATA)
             .set('Accept', 'application/json')
             .expect(201);
@@ -30,6 +37,7 @@ describe('avatar api', () => {
         const getOneResponse = await request(app)
             .get(`/api/avatars/${newAvatarId}`)
             .set('Accept', 'application/json')
+            .auth('marie@home.edu', '123')
             .expect(200);
 
         expect(getOneResponse.body).toMatchObject(TEST_DATA);
@@ -39,11 +47,13 @@ describe('avatar api', () => {
 
         const getAllResponse = await request(app)
             .get(`/api/avatars`)
+            .auth('marie@home.edu', '123')
             .set('Accept', 'application/json')
             .expect(200);
 
         const createResponse = await request(app)
             .post('/api/avatars')
+            .auth('marie@home.edu', '123')
             .send(TEST_DATA)
             .set('Accept', 'application/json')
             .expect(201);
@@ -52,6 +62,7 @@ describe('avatar api', () => {
 
         const getAllWithNewResponse = await request(app)
             .get(`/api/avatars`)
+            .auth('marie@home.edu', '123')
             .set('Accept', 'application/json')
             .expect(200);
 
@@ -77,10 +88,20 @@ describe('avatar api', () => {
 
         const createResponse = await request(app)
             .post('/api/avatars')
+            .auth('marie@home.edu', '123')
             .send(testData)
             .set('Accept', 'application/json')
             .expect(400);
     });
 
+
+    //user
+
+
 });
+
+
+
+
+
 
