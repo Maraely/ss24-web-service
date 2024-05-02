@@ -55,8 +55,8 @@ export default Joi.object({
         .default('shirt'),
 
     lowerClothing: Joi.alternatives()
-            .conditional(
-                'upperClothing', {
+        .conditional(
+            'upperClothing', {
                 is: 'dress',
                 then: Joi.forbidden(), //.optional(),
                 otherwise: Joi
@@ -67,4 +67,3 @@ export default Joi.object({
 
 
 })
-
