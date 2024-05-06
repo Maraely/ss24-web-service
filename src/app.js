@@ -65,9 +65,7 @@ app.use(express.json())
 
 app.use(passport.authenticate('session'))
 
-app.get('/', function (req, res) {
-    res.sendFile(`index.html`)
-})
+
 
 app.use('/', avatarsRouter);
 app.use('/', usersRouter);
